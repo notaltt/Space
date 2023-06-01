@@ -5,3 +5,5 @@ menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active')
     showcase.classList.toggle('active');
 })
+
+exports.build = series(scssTask, jsTask);
