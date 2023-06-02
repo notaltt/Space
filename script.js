@@ -20,6 +20,8 @@ function update(time){
 
     const delta = time - lastTime;
     lastTime = time;
+
+    console.log(delta)
 }
 
 exports.build = series(scssTask, jsTask);

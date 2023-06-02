@@ -10,14 +10,16 @@
 <body>
     <video class="random" src="Black-Particles-Glitch-Fragment-Effect-White-Background-Loop.mp4" muted autoplay loop></video>
     <div class="main">
-        <div class="game"> 
-            <div class="score">0</div>
-            <div class="run">It's not working yet.</div>
-            <img src="land.png"  class="land">
-            <img src="land.png"  class="land">
-            <img src="spaceman.png"  class="spaceman">
+        <div class="game" data-world> 
+            <div class="score" data-score>0</div>
+            <div class="run" data-run>Press Any Key To Run.</div>
+            <img src="land.png"  class="land" data-ground>
+            <img src="land.png"  class="land" data-ground>
+            <img src="spaceman.png"  class="spaceman" data-spaceman>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="gamescript.js" type="module"></script>
+    <script src="ground.js" type="module"></script>
+    <script src="updateCustomPropery.js" type="module"></script>
 </body>
 </html>

@@ -52,6 +52,7 @@
 .land{
     --left: 0;
     position: absolute;
+    width: 100%;
     top: 80%;
     left: calc(var(--left) * 1%);
 }
@@ -63,7 +64,8 @@
     bottom: calc(var(--bottom) * 1%);
 }
 
-.stones {
+.stone {
+    --left: 0;
     position: absolute;
     left: calc(var(--left)*1%);
     bottom: 20%
