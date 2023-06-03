@@ -88,6 +88,7 @@
 }
 
 .game a{
+    position: absolute;
     display: inline-block;
     font-size: 1em;
     background: #fff;
@@ -95,6 +96,7 @@
     text-decoration: none;
     color: #111;
     text-transform: uppercase;
+    top: 94%;
     letter-spacing: 2px;
     transition: 0.2s;
 }
