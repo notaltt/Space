@@ -41,7 +41,23 @@
     position: absolute;
     font-size: 2vmin;
     top: 30%;
-    left: 30%;
+    left: 1%;
+    color: white;
+}
+
+.jump {
+    position: absolute;
+    font-size: 2vmin;
+    top: 35%;
+    left: 1%;
+    color: white;
+}
+
+.runkm{
+    position: absolute;
+    font-size: 2vmin;
+    top: 20%;
+    left: 1%;
     color: white;
 }
 
@@ -69,4 +85,27 @@
     position: absolute;
     left: calc(var(--left)*1%);
     bottom: 20%
+}
+
+.game a{
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.game a:hover{
+    letter-spacing: 6px;
+}
+
+.cloud {
+    --left: 0;
+    position: absolute;
+    width: 100%;
+    left: calc(var(--left) * 1%);
 }

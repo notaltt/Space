@@ -1,10 +1,12 @@
-import { setupGround, updateGround } from './ground.js'
+import { setupCloud, setupGround, updateCloud, updateGround } from './ground.js'
 import { getSpacemanRect, setupSpaceman, updateSpaceman, setSpacemanLose } from './spaceman.js'
 import { getStoneRect, setupStone, updateStone } from './stones.js'
 
 
 const scoreElem = document.querySelector("[data-score]");
 const runElem = document.querySelector("[data-run]");
+const kmElem = document.querySelector("[data-runkm]");
+const jumpElem = document.querySelector("[data-jump]");
 
 document.addEventListener("keydown", handleStart, {once: true});
 
@@ -24,6 +26,7 @@ function update(time){
     const delta = time - lastTime;
 
     updateGround(delta, speedScale);
+    updateCloud(delta, speedScale);
     updateSpaceman(delta, speedScale);
     updateStone(delta, speedScale);
     updateSpeedScale(delta);
@@ -41,6 +44,7 @@ function updateSpeedScale(delta){
 function updateScore(delta){
     score += delta * 0.01;
     scoreElem.textContent = Math.floor(score);
+    kmElem.textContent = "You have explored "+Math.floor(score)+" km in space.";
 }
 
 function handleStart(){
@@ -48,9 +52,12 @@ function handleStart(){
     speedScale = 1;
     score = 0;
     setupGround();
+    setupCloud();
     setupSpaceman();
     setupStone();
     runElem.classList.add("hide");
+    kmElem.classList.add("hide");
+    jumpElem.classList.add("hide");
     window.requestAnimationFrame(update);
 }
 
@@ -73,5 +80,7 @@ function handleLose(){
     setTimeout(() => {
         document.addEventListener("keydown", handleStart, {once: true});
         runElem.classList.remove("hide");
+        kmElem.classList.remove("hide");
+        jumpElem.classList.remove("hide");
     }, 100)
 }

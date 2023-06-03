@@ -10,18 +10,5 @@ menuToggle.addEventListener('click', () => {
     contact.classList.toggle('active');
 })
 
-let lastTime;
-function update(time){
-    if(lastTime == null){
-        lastTime = time;
-        window.requestAnimationFrame(update);
-        return;
-    }
-
-    const delta = time - lastTime;
-    lastTime = time;
-
-    console.log(delta)
-}
 
 exports.build = series(scssTask, jsTask);
